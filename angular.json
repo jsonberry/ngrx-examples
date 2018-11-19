@@ -133,6 +133,34 @@
           }
         }
       }
+    },
+    "movies": {
+      "root": "libs/movies",
+      "sourceRoot": "libs/movies/src",
+      "projectType": "library",
+      "prefix": "ngrx-examples",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/movies/src/test.ts",
+            "tsConfig": "libs/movies/tsconfig.spec.json",
+            "karmaConfig": "libs/movies/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/movies/tsconfig.lib.json",
+              "libs/movies/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

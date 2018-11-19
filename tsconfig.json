@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@ngrx-examples/movies": [
+        "libs/movies/src/index.ts"
+      ]
     }
   },
   "exclude": [

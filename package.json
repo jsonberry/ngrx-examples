@@ -41,7 +41,8 @@
     "@nrwl/nx": "7.0.2",
     "@ngrx/effects": "6.1.0",
     "@ngrx/router-store": "6.1.0",
-    "@ngrx/store": "6.1.0"
+    "@ngrx/store": "6.1.0",
+    "@ngrx/entity": "6.1.0"
   },
   "devDependencies": {
     "@angular/cli": "7.0.1",
