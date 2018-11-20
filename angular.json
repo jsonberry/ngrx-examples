@@ -75,33 +75,25 @@
             "browserTarget": "main:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/main/src/test.ts",
-            "polyfills": "apps/main/src/polyfills.ts",
-            "tsConfig": "apps/main/tsconfig.spec.json",
-            "karmaConfig": "apps/main/karma.conf.js",
-            "styles": [
-              "apps/main/src/styles.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/main/src/favicon.ico",
-              "apps/main/src/assets"
-            ]
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "apps/main/tsconfig.app.json",
+              "apps/main/tsconfig.spec.json",
               "apps/main/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/main/jest.config.js",
+            "tsConfig": "apps/main/tsconfig.spec.json",
+            "setupFile": "apps/main/src/test-setup.ts"
           }
         }
       }
@@ -140,24 +132,25 @@
       "projectType": "library",
       "prefix": "ngrx-examples",
       "architect": {
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "libs/toast/src/test.ts",
-            "tsConfig": "libs/toast/tsconfig.spec.json",
-            "karmaConfig": "libs/toast/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "libs/toast/tsconfig.lib.json",
+              "libs/toast/tsconfig.spec.json",
               "libs/toast/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/toast/jest.config.js",
+            "tsConfig": "libs/toast/tsconfig.spec.json",
+            "setupFile": "libs/toast/src/test-setup.ts"
           }
         }
       }

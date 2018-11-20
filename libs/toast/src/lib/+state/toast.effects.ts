@@ -5,9 +5,9 @@ import { concat, delay, switchMapTo } from 'rxjs/operators';
 import {
   ButterToast,
   EatToast,
+  MakeToast,
   ToastActionTypes,
-  ToastBread,
-  MakeToast
+  ToastBread
 } from './toast.actions';
 
 @Injectable()

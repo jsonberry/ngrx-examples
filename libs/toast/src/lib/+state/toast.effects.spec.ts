@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { ButterToast, EatToast, MakeToast, ToastBread } from './toast.actions';
 import { ToastEffects } from './toast.effects';
-import { getTestScheduler } from '@nrwl/nx/testing';
 
 describe('ToastEffects', () => {
   let actions: Observable<any>;
@@ -24,20 +23,25 @@ describe('ToastEffects', () => {
       providers: [ToastEffects, provideMockActions(() => actions)]
     });
 
-    scheduler = getTestScheduler()
+    scheduler = new TestScheduler((actual, expected) => {
+      expect(actual).toEqual(expected);
+    });
     effects = TestBed.get(ToastEffects);
   });
 
   describe('makeToast$', () => {
     it('should behave...', () => {
-      scheduler.run(helpers => {
-        actions = helpers.hot('a', { a: new MakeToast() });
+      scheduler.run(({ hot, expectObservable }) => {
+        actions = hot('a', { a: new MakeToast() });
 
-        helpers.expectObservable(effects.makeToast$).toBe('- 2999ms a 2999ms b 2999ms c', {
-          a: new ToastBread(),
-          b: new ButterToast(),
-          c: new EatToast()
-        })
+        expectObservable(effects.makeToast$).toBe(
+          '- 2999ms a 2999ms b 2999ms c',
+          {
+            a: new ToastBread(),
+            b: new ButterToast(),
+            c: new EatToast()
+          }
+        );
       });
     });
   });
