@@ -10,7 +10,7 @@ module.exports = function(config) {
     ...baseConfig,
     coverageIstanbulReporter: {
       ...baseConfig.coverageIstanbulReporter,
-      dir: join(__dirname, '../../coverage/libs/movies')
+      dir: join(__dirname, '../../coverage/libs/toast')
     }
   });
 };

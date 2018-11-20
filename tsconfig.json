@@ -16,8 +16,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@ngrx-examples/movies": [
-        "libs/movies/src/index.ts"
+      "@ngrx-examples/toast": [
+        "libs/toast/src/index.ts"
       ]
     }
   },

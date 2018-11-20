@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/libs/movies",
+    "outDir": "../../dist/out-tsc/libs/toast",
     "types": [
       "jasmine",
       "node"

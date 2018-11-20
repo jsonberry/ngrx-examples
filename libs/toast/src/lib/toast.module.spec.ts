@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { MoviesModule } from './movies.module';
+import { ToastModule } from './toast.module';
 
-describe('MoviesModule', () => {
+describe('ToastModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MoviesModule]
+      imports: [ToastModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(MoviesModule).toBeDefined();
+    expect(ToastModule).toBeDefined();
   });
 });

@@ -134,26 +134,26 @@
         }
       }
     },
-    "movies": {
-      "root": "libs/movies",
-      "sourceRoot": "libs/movies/src",
+    "toast": {
+      "root": "libs/toast",
+      "sourceRoot": "libs/toast/src",
       "projectType": "library",
       "prefix": "ngrx-examples",
       "architect": {
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libs/movies/src/test.ts",
-            "tsConfig": "libs/movies/tsconfig.spec.json",
-            "karmaConfig": "libs/movies/karma.conf.js"
+            "main": "libs/toast/src/test.ts",
+            "tsConfig": "libs/toast/tsconfig.spec.json",
+            "karmaConfig": "libs/toast/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/movies/tsconfig.lib.json",
-              "libs/movies/tsconfig.spec.json"
+              "libs/toast/tsconfig.lib.json",
+              "libs/toast/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
